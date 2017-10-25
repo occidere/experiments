@@ -10,7 +10,6 @@ import org.jsoup.nodes.*;
 import org.jsoup.select.Elements;
 
 /** 아아아아ㅏ아*/
-
 public class SilentHill3Downloader{
 	public static void main(String[] args) throws Exception {
 		Document doc = Jsoup.connect("http://hygame.tistory.com/2227").get();
