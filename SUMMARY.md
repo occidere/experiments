@@ -10,3 +10,7 @@
 
 * [Group 2 Test page](group2/group-2-test-page.md)
 
+## 그룹3
+
+* [그룹3 test](3/3-test.md)
+
