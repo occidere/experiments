@@ -16,6 +16,5 @@ jobs:
     - name: select random assignee
       shell: bash
       run: |
-        cat "${GITHUB_EVENT_PATH}" | jq .
         assignees=($(jq --raw-output '.issue.assignees[].login' event.js))
         echo "assignee: ${assignee[@]}"
