@@ -17,4 +17,4 @@ jobs:
       shell: bash
       run: |
         assignees=($(jq --raw-output '.issue.assignees[].login' "${GITHUB_EVENT_PATH}"))
-        echo "assignee: ${assignee[@]}"
+        echo "assignees: ${assignees[@]}"
