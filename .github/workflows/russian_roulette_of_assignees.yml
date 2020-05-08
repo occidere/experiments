@@ -16,6 +16,8 @@ jobs:
     - name: select random assignee
       shell: bash
       run: |
+        echo "${GITHUB_EVENT_PATH}"
+        
         action=$(jq --raw-output .action "$GITHUB_EVENT_PATH")
         number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
         assignee=$(jq --raw-output .assignee.login "$GITHUB_EVENT_PATH")
