@@ -17,10 +17,5 @@ jobs:
       shell: bash
       run: |
         cat "${GITHUB_EVENT_PATH}" | jq .
-        
-        action=$(jq --raw-output .action "$GITHUB_EVENT_PATH")
-        number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-        assignee=$(jq --raw-output .assignee.login "$GITHUB_EVENT_PATH")
-        echo "action: ${action}"
-        echo "number: ${number}"
-        echo "assignee: ${assignee}"
+        assignees=($(jq --raw-output '.issue.assignees[].login' event.js))
+        echo "assignee: ${assignee[@]}"
