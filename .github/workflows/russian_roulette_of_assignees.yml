@@ -16,7 +16,7 @@ jobs:
     - name: select random assignee
       shell: bash
       run: |
-        assignees=($(jq --raw-output '.issue.assignees[].login' "${GITHUB_EVENT_PATH}"))
+        assignees=($(jq '.issue.assignees[].login' "${GITHUB_EVENT_PATH}"))
         echo "All assignees: ${assignees[@]}"
         LENGTH="${#assignees[@]}"
         SELECTED_ASSIGNEE="${assignees[$(shuf -i1-${LENGTH} -n 1)]}"
