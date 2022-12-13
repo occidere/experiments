@@ -1,6 +1,6 @@
 name: Greetings
 
-on: issue_comment
+on: [issue_comment, pull_request_review_comment]
 
 jobs:
   pr_commented:
